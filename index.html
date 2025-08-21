@@ -3,54 +3,74 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LazyDevUserX's Portfolio</title>
+    <title>LazyDevUserX | Software Developer</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">LazyDevUserX</div>
+    <div id="root">
+        <header>
             <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
+                <div class="logo">
+                    <a href="#">LazyDevUserX</a>
+                </div>
+                <ul class="nav-links">
+                    <li><a href="#about">About</a></li>
                     <li><a href="#projects">Projects</a></li>
                     <li><a href="#contact">Contact</a></li>
                 </ul>
             </nav>
+        </header>
+
+        <div class="left-sidebar">
+            <ul class="social-links">
+                <li><a href="https://github.com/LazyDevUserX" target="_blank"><i class="fab fa-github"></i></a></li>
+                <!-- Add other social media links here -->
+            </ul>
         </div>
-    </header>
 
-    <main>
-        <section id="hero">
-            <div class="container">
-                <h1>Welcome to My Digital Playground</h1>
-                <p>Exploring the world of code, one project at a time.</p>
+        <div class="right-sidebar">
+            <div class="email-link">
+                <a href="mailto:your-email@example.com">your-email@example.com</a>
             </div>
-        </section>
+        </div>
 
-        <section id="projects">
-            <div class="container">
+        <main>
+            <section id="hero">
+                <div class="hero-content">
+                    <h1>Hi, I'm LazyDevUserX.</h1>
+                    <h2>I build things for the web.</h2>
+                    <p>I'm a software developer specializing in building (and occasionally designing) exceptional digital experiences. Currently, I'm focused on building accessible, human-centered products.</p>
+                    <a href="#projects" class="cta-button">Check out my projects!</a>
+                </div>
+            </section>
+
+            <section id="about">
+                <h2 class="section-title">About Me</h2>
+                <div class="about-content">
+                    <p>Hello! I'm a passionate developer who enjoys creating tools and applications that make a difference. My journey in software development started with a simple "Hello, World!" and has since grown into a full-fledged passion for building elegant and functional solutions.</p>
+                    <p>I'm always eager to learn new technologies and improve my skills. When I'm not coding, you can find me exploring new open-source projects or contributing to the developer community.</p>
+                </div>
+            </section>
+
+            <section id="projects">
                 <h2 class="section-title">My Projects</h2>
                 <div id="projects-container">
                     <!-- Projects will be dynamically loaded here -->
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <footer id="contact">
-        <div class="container">
-            <h3>Get in Touch</h3>
-            <p>Find me on social media and GitHub.</p>
-            <ul>
-                <li><a href="https://github.com/LazyDevUserX" target="_blank"><i class="fab fa-github"></i></a></li>
-                <!-- Add other social media links here, for example: -->
-                <!-- <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a></li> -->
-                <!-- <li><a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a></li> -->
-            </ul>
-        </div>
-    </footer>
+            <section id="contact">
+                <h2 class="section-title">Get In Touch</h2>
+                <p>I'm always open to new opportunities and collaborations. Feel free to send me a message!</p>
+                <a href="mailto:your-email@example.com" class="cta-button">Say Hello</a>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2025 LazyDevUserX. All rights reserved.</p>
+        </footer>
+    </div>
 
     <script src="script.js"></script>
 </body>
