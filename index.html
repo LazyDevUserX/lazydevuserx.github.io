@@ -3,55 +3,307 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LazyDevUserX's Portfolio</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <title>LaxyDevUserX | Portfolio</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #0a0a0a;
+            color: #e5e7eb;
+            overflow-y: scroll;
+        }
+
+        /* Custom scrollbar for a modern look */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #111827;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4f46e5;
+            border-radius: 10px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366f1;
+        }
+
+        /* Glassmorphism effect for cards and nav */
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        /* Active tab indicator */
+        .tab-active {
+            color: #ffffff;
+            background-color: #4f46e5;
+        }
+        
+        .project-tab-active {
+            color: #ffffff;
+            border-color: #4f46e5;
+        }
+
+        /* Glow effect for interactive elements */
+        .neon-glow-subtle {
+             box-shadow: 0 0 8px rgba(79, 70, 229, 0.5);
+        }
+
+        /* Button glow on hover */
+        .btn-glow-hover:hover {
+            box-shadow: 0 0 6px rgba(79, 70, 229, 0.8), 0 0 12px rgba(79, 70, 229, 0.6);
+        }
+    </style>
 </head>
-<body>
-    <header>
-        <div class="container">
-            <div class="logo">LazyDevUserX</div>
-            <nav>
-                <ul>
-                    <li><a href="#hero">Home</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
+<body class="bg-gray-900">
 
-    <main>
-        <section id="hero">
-            <div class="container">
-                <h1>Welcome to My Digital Playground</h1>
-                <p>Exploring the world of code, one project at a time.</p>
-            </div>
-        </section>
+    <div class="min-h-screen p-4 sm:p-6 lg:p-8">
+        <div class="max-w-5xl mx-auto">
 
-        <section id="projects">
-            <div class="container">
-                <h2 class="section-title">My Projects</h2>
-                <div id="projects-container">
-                    <!-- Projects will be dynamically loaded here -->
+            <!-- Header & Main Navigation -->
+            <header class="flex flex-col sm:flex-row items-center justify-between mb-12">
+                <div class="flex items-center space-x-4 mb-4 sm:mb-0">
+                    <img src="https://placehold.co/64x64/4f46e5/ffffff?text=LX" alt="Profile Picture" class="w-16 h-16 rounded-full border-2 border-indigo-500 neon-glow-subtle">
+                    <div>
+                        <h1 class="text-2xl font-bold text-white">LaxyDevUserX</h1>
+                        <p class="text-indigo-300">Professional Problem Avoider</p>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+                <nav class="glass-effect p-2 rounded-full">
+                    <div id="main-tabs" class="flex items-center space-x-2">
+                        <button data-tab="about" class="main-tab-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300 tab-active">About</button>
+                        <button data-tab="projects" class="main-tab-btn px-4 py-2 rounded-full text-sm font-medium transition-all duration-300">Projects</button>
+                    </div>
+                </nav>
+            </header>
 
-    <footer id="contact">
-        <div class="container">
-            <h3>Get in Touch</h3>
-            <p>Find me on social media and GitHub.</p>
-            <ul>
-                <li><a href="https://github.com/LazyDevUserX" target="_blank"><i class="fab fa-github"></i></a></li>
-                <!-- Add other social media links here, for example: -->
-                <!-- <li><a href="https://twitter.com/yourusername" target="_blank"><i class="fab fa-twitter"></i></a></li> -->
-                <!-- <li><a href="https://linkedin.com/in/yourusername" target="_blank"><i class="fab fa-linkedin"></i></a></li> -->
-            </ul>
+            <main>
+                <!-- About Section -->
+                <section id="about-content" class="main-content-section">
+                    <div class="glass-effect rounded-2xl p-8">
+                        <h2 class="text-3xl font-bold text-white mb-4">I'm the Lazy Dev</h2>
+                        <p class="text-gray-300 leading-relaxed mb-6">
+                           Why do a task in 10 minutes when you can spend 10 hours automating it? That's my motto. I write code to avoid doing actual work. Some call it lazy, I call it "peak efficiency." My projects are born from a deep-seated desire to never have to do the same boring thing twice. Welcome to my collection of clever shortcuts.
+                        </p>
+                        <div class="flex flex-wrap items-center gap-4">
+                            <a href="https://github.com/LaxyDevUserX" target="_blank" class="flex items-center space-x-2 text-gray-300 hover:text-indigo-400 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>GitHub</span>
+                            </a>
+                             <a href="#" target="_blank" class="flex items-center space-x-2 text-gray-300 hover:text-sky-400 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-twitter"><path d="M22 4s-.7 2.1-2 3.4c1.6 1.4 3.3 4.4 3.3 4.4s-1.4 1.4-2.8 2.1c-1.2 1.1-2.8 2.1-4.2 2.5-2.3.6-4.6.3-6.5-.8-5.2-2.9-7.4-8.1-7.4-8.1s2.1 1.1 4.2 1.4c-2.1-.6-4.2-2.5-4.2-4.8 0 0 2.1 1.1 4.2 1.8-2.1-1.2-2.8-3.5-2.8-3.5s2.5 4.1 6.8 5.5c0 0 .5-3.5 4.2-3.5s4.2 2.5 4.2 2.5z"/></svg>
+                                <span>Twitter / X</span>
+                            </a>
+                            <a href="#" target="_blank" class="flex items-center space-x-2 text-gray-300 hover:text-blue-500 transition-colors duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                                <span>LinkedIn</span>
+                            </a>
+                            <a href="#" target="_blank" class="flex items-center space-x-2 text-gray-300 hover:text-indigo-400 transition-colors duration-300">
+                               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-message-square"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                                <span>Discord</span>
+                            </a>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Projects Section -->
+                <section id="projects-content" class="main-content-section hidden">
+                    <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8">
+                         <h2 class="text-3xl font-bold text-white mb-4 md:mb-0">My Projects</h2>
+                         <div id="project-tabs" class="flex items-center space-x-2 sm:space-x-4 overflow-x-auto pb-2">
+                            <button data-category="userscripts" class="project-tab-btn flex-shrink-0 text-sm sm:text-base font-medium border-b-2 pb-2 transition-all duration-300 project-tab-active">Userscripts</button>
+                            <button data-category="extensions" class="project-tab-btn flex-shrink-0 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-400 hover:text-white pb-2 transition-all duration-300">Extensions</button>
+                            <button data-category="webpages" class="project-tab-btn flex-shrink-0 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-400 hover:text-white pb-2 transition-all duration-300">Webpages</button>
+                            <button data-category="misc" class="project-tab-btn flex-shrink-0 text-sm sm:text-base font-medium border-b-2 border-transparent text-gray-400 hover:text-white pb-2 transition-all duration-300">Misc</button>
+                         </div>
+                    </div>
+                    <div id="project-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                        <!-- Project cards will be injected here by JavaScript -->
+                    </div>
+                </section>
+            </main>
+
         </div>
-    </footer>
+    </div>
 
-    <script src="script.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            
+            // --- DATA: EDIT YOUR PROJECTS HERE ---
+            const projects = {
+                userscripts: [
+                    {
+                        title: 'GitHub Enhancer',
+                        description: 'Improves the GitHub interface with new features like repo size display and quick file downloads.',
+                        installUrl: '#', // Replace with your actual .user.js file URL
+                        repoUrl: '#' // Replace with link to GitHub repo
+                    },
+                    {
+                        title: 'YouTube Ad Skipper',
+                        description: 'An intelligent script that automatically skips ads on YouTube videos without interrupting your viewing.',
+                        installUrl: '#',
+                        repoUrl: '#'
+                    },
+                    {
+                        title: 'Reddit Clean Feed',
+                        description: 'Removes sponsored posts and other clutter from your Reddit feed for a cleaner experience.',
+                        installUrl: '#',
+                        repoUrl: '#'
+                    }
+                ],
+                extensions: [
+                    {
+                        title: 'Color Picker Pro',
+                        description: 'A powerful color picker extension for developers and designers to grab colors from any webpage.',
+                        link: '#' // Replace with link to Chrome/Firefox store
+                    },
+                    {
+                        title: 'Tab Manager',
+                        description: 'Organize your browser tabs into groups, save sessions, and reduce memory usage effortlessly.',
+                        link: '#'
+                    }
+                ],
+                webpages: [
+                    {
+                        title: 'Portfolio Template',
+                        description: 'The very page you are looking at! A modern, single-file portfolio template for developers.',
+                        link: '#' // Replace with link to the live page or repo
+                    },
+                    {
+                        title: 'Interactive Data Viz',
+                        description: 'A web-based tool for visualizing complex datasets using D3.js with smooth animations.',
+                        link: '#'
+                    },
+                     {
+                        title: 'Minimalist Blog Platform',
+                        description: 'A clean, fast, and responsive blog platform built with a modern static site generator.',
+                        link: '#'
+                    }
+                ],
+                misc: [
+                    {
+                        title: 'CLI Weather App',
+                        description: 'A command-line interface tool to get instant weather forecasts for any location, built with Node.js.',
+                        link: '#' // Replace with link to GitHub repo
+                    },
+                    {
+                        title: 'Discord Bot Framework',
+                        description: 'A boilerplate framework for building powerful and scalable Discord bots with ease.',
+                        link: '#'
+                    }
+                ]
+            };
+
+            // --- DOM ELEMENTS ---
+            const mainTabs = document.getElementById('main-tabs');
+            const projectTabs = document.getElementById('project-tabs');
+            const projectGrid = document.getElementById('project-grid');
+            const mainContentSections = document.querySelectorAll('.main-content-section');
+
+            // --- FUNCTIONS ---
+
+            /**
+             * Renders project cards into the grid based on the selected category.
+             * @param {string} category - The key for the project category (e.g., 'userscripts').
+             */
+            const renderProjects = (category) => {
+                const categoryProjects = projects[category] || [];
+                projectGrid.innerHTML = ''; // Clear existing projects
+
+                if (categoryProjects.length === 0) {
+                    projectGrid.innerHTML = `<p class="text-gray-400 md:col-span-2 lg:col-span-3 text-center">No projects in this category yet. Check back soon!</p>`;
+                    return;
+                }
+                
+                categoryProjects.forEach(project => {
+                    const card = document.createElement('div');
+                    card.className = 'glass-effect rounded-2xl p-6 flex flex-col justify-between transition-all duration-300 hover:border-indigo-500 hover:scale-105';
+                    
+                    let buttonHtml = '';
+                    if (category === 'userscripts') {
+                        buttonHtml = `
+                        <div class="mt-4 flex items-center space-x-3">
+                            <a href="${project.installUrl}" target="_blank" class="flex-1 flex items-center justify-center space-x-2 bg-indigo-600 text-white font-medium py-2 px-3 rounded-lg hover:bg-indigo-500 transition-all duration-300 btn-glow-hover">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" x2="12" y1="15" y2="3"/></svg>
+                                <span>Install</span>
+                            </a>
+                            <a href="${project.repoUrl}" target="_blank" class="flex-1 flex items-center justify-center space-x-2 bg-gray-700 text-white font-medium py-2 px-3 rounded-lg hover:bg-gray-600 transition-all duration-300 btn-glow-hover">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg>
+                                <span>Repo</span>
+                            </a>
+                        </div>`;
+                    } else {
+                        buttonHtml = `<a href="${project.link}" target="_blank" class="inline-block w-full mt-4 bg-gray-700 text-white text-center font-medium py-2 px-4 rounded-lg hover:bg-gray-600 transition-colors duration-300 btn-glow-hover">View Project</a>`;
+                    }
+
+                    card.innerHTML = `
+                        <div>
+                            <h3 class="text-xl font-bold text-white">${project.title}</h3>
+                            <p class="text-gray-300 mt-2 text-sm">${project.description}</p>
+                        </div>
+                        ${buttonHtml}
+                    `;
+                    projectGrid.appendChild(card);
+                });
+            };
+
+            // --- EVENT LISTENERS ---
+
+            // Main tab switching (About / Projects)
+            mainTabs.addEventListener('click', (e) => {
+                if (e.target.matches('.main-tab-btn')) {
+                    const tabName = e.target.dataset.tab;
+
+                    // Update button styles
+                    mainTabs.querySelectorAll('.main-tab-btn').forEach(btn => btn.classList.remove('tab-active'));
+                    e.target.classList.add('tab-active');
+
+                    // Show/hide content sections
+                    mainContentSections.forEach(section => {
+                        if (section.id === `${tabName}-content`) {
+                            section.classList.remove('hidden');
+                        } else {
+                            section.classList.add('hidden');
+                        }
+                    });
+                }
+            });
+
+            // Project category tab switching
+            projectTabs.addEventListener('click', (e) => {
+                if (e.target.matches('.project-tab-btn')) {
+                    const category = e.target.dataset.category;
+                    
+                    // Update button styles
+                    projectTabs.querySelectorAll('.project-tab-btn').forEach(btn => {
+                        btn.classList.remove('project-tab-active');
+                        btn.classList.add('text-gray-400', 'border-transparent');
+                    });
+                    e.target.classList.add('project-tab-active');
+                    e.target.classList.remove('text-gray-400', 'border-transparent');
+
+                    // Render the projects for the selected category
+                    renderProjects(category);
+                }
+            });
+
+            // --- INITIALIZATION ---
+            // Render the default project category on page load
+            renderProjects('userscripts');
+        });
+    </script>
+
 </body>
 </html>
